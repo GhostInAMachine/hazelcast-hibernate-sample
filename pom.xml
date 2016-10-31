@@ -7,6 +7,18 @@
     <groupId>hibernate-caching</groupId>
     <artifactId>hibernate-caching</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -15,11 +27,19 @@
             <version>1.10.2.RELEASE</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.4.1211</version>
+        </dependency>
+
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.1.1.Final</version>
+            <version>4.3.11.Final</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -28,30 +48,22 @@
         </dependency>
 
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.4.1209</version>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-client</artifactId>
+            <version>3.6.5</version>
         </dependency>
 
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast</artifactId>
-            <version>3.7.1</version>
+            <version>3.6.5</version>
         </dependency>
 
         <dependency>
             <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-client</artifactId>
-            <version>3.7.1</version>
+            <artifactId>hazelcast-hibernate4</artifactId>
+            <version>3.6.5</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-hibernate5</artifactId>
-            <version>1.0</version>
-        </dependency>
-
-
     </dependencies>
 
 

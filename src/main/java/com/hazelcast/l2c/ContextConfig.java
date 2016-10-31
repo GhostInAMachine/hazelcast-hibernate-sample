@@ -48,6 +48,10 @@ public class ContextConfig {
     @Bean
     public Properties jpaProperties() {
         final Properties properties = new Properties();
+        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+
+        properties.setProperty("hibernate.cache.use_query_cache", "true");
+
         properties.setProperty("hibernate.show_sql", "true");
 
         properties.setProperty("hibernate.cache.use_second_level_cache", "true");

@@ -7,13 +7,18 @@ public class Main {
         final AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ContextConfig.class);
         final DummyRepository repository = context.getBean(DummyRepository.class);
 
-        final Iterable<DummyEntity> all = repository.findAll();
+        final ConcreteEntity entity = new ConcreteEntity();
+        entity.setSomething("xyz");
+        entity.setText("bar");
+        entity.setNumber(1);
+        repository.save(entity);
 
         /*
         If everything works as expected you should only observe a single SQL
         statement being printed to the STDOUT
          */
 
-        final DummyEntity one = repository.findOne(1L);
+        final AbstractEntity one = repository.findByTextAndNumber("bar", 1);
+        final AbstractEntity two = repository.findByTextAndNumber("bar", 1);
     }
 }
